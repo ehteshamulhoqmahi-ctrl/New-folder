@@ -11,5 +11,5 @@ int main() {
     else
         cout << "The number is odd." << endl;
 
-    return 0;
+    return 0  ;
 }
