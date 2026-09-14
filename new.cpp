@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-        std::cout << "my mother name is kawchara!" << '\n';
+        std::cout << "my father name is anwar!" << '\n';
 
     return 0;
 }
