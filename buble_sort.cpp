@@ -1,32 +1,43 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
+void bubble_sort(vector<int>& vec) {
+    size_t n = vec.size();
 
-void bubble_sort(vector<int>& vec){
-    int n = vec.size();
-    bool swapped;
-    for(int i=0;i<n-1;i++){
-        swapped = false;
-        for(int j=0;j<n-i-1;j++){
-            if(vec[j]>vec[j+1]){
-                swap(vec[j],vec[j+1]);
+    for (size_t i = 0; i < n - 1; ++i) {
+        bool swapped = false;
+
+        for (size_t j = 0; j + 1 < n - i; ++j) {
+            if (vec[j] > vec[j + 1]) {
+                swap(vec[j], vec[j + 1]);
                 swapped = true;
             }
         }
-        if(!swapped){
+
+        if (!swapped) {
             break;
         }
     }
 }
 
-int main(){
-    vector<int> vec={64, 34, 25, 12, 22, 11, 90};
-    bubble_sort(vec);
-    cout<<"Sorted array: ";
-    for(int i=0;i<vec.size();i++){
-        cout<<vec[i]<<" ";
+int main() {
+    vector<int> vec;
+    int temp;
+
+    cout << "Enter numbers to sort (Enter a non-integer to stop): ";
+    while (cin >> temp) {
+        vec.push_back(temp);
     }
-    cout<<endl;
+
+
+    bubble_sort(vec);
+
+    cout << "Sorted array: ";
+    for (size_t i = 0; i < vec.size(); ++i) {
+        cout << vec[i] << " ";
+    }
+    cout << endl;
+
     return 0;
 }
